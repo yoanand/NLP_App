@@ -1,17 +1,10 @@
-streamlit 
-nltk 
-spacy 
-pandas 
-plotly 
-scikit-learn 
-wordcloud 
-pyspellchecker 
-language-tool-python 
+streamlit
+spacy
+matplotlib
+nltk
 gensim
-sumy
+googletrans==4.0.0-rc1
 textblob
-googletrans
+sumy
 wordcloud
-
-
-# python3 -m spacy download en_core_web_sm
+scikit-learn
