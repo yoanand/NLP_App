@@ -145,5 +145,5 @@ if text_input:
     elif task == "Translation":
         st.header("Translation")
         target_lang = st.text_input("Enter target language code (e.g., 'es' for Spanish):", "es")
-        translation = asyncio.run(NLPUtils.translation(text_input, target_lang))
+        translation = NLPUtils.translation(text_input, target_lang)
         st.write(f"**Translated Text:** {translation}")

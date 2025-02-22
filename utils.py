@@ -17,19 +17,8 @@ from textblob import TextBlob
 from wordcloud import WordCloud
 from urllib.parse import quote
 
-# Function to load spaCy model
-def load_spacy_model():
-    try:
-        nlp = spacy.load("en_core_web_sm")
-    except OSError:
-        from spacy.cli import download
-        download("en_core_web_sm")
-        nlp = spacy.load("en_core_web_sm")
-    return nlp
-
-nlp = load_spacy_model()
-
-
+nlp = spacy.load("en_core_web_sm")
+    
 class NLPUtils:
     """Advanced NLP Utilities with robust error handling and optimizations."""
 
@@ -177,20 +166,16 @@ class NLPUtils:
         return unique_dependencies
 
     @staticmethod
-    async def translation(text, target_language="es"):
+    def translation(text, target_language="es"):
         if not text.strip():
             return "Input text is empty."
         translator = Translator()
-        
-        # Detect language asynchronously
-        detected_lang = await translator.detect(text)
-        
+        # Detect language synchronously
+        detected_lang = translator.detect(text)
         if detected_lang.lang == target_language:
             return "Text is already in the target language."
-        
-        # Translate text asynchronously
-        translated_text = await translator.translate(text, dest=target_language)
-        
+        # Translate text synchronously
+        translated_text = translator.translate(text, dest=target_language)
         return translated_text.text
 
     @staticmethod
