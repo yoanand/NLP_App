@@ -17,7 +17,18 @@ from textblob import TextBlob
 from wordcloud import WordCloud
 from urllib.parse import quote
 
-nlp = spacy.load("en_core_web_sm")
+# Function to load spaCy model
+def load_spacy_model():
+    try:
+        nlp = spacy.load("en_core_web_sm")
+    except OSError:
+        from spacy.cli import download
+        download("en_core_web_sm")
+        nlp = spacy.load("en_core_web_sm")
+    return nlp
+
+nlp = load_spacy_model()
+
 
 class NLPUtils:
     """Advanced NLP Utilities with robust error handling and optimizations."""
