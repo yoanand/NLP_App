@@ -1,0 +1,17 @@
+streamlit 
+nltk 
+spacy 
+pandas 
+plotly 
+scikit-learn 
+wordcloud 
+pyspellchecker 
+language-tool-python 
+gensim
+sumy
+textblob
+googletrans
+wordcloud
+
+
+# python3 -m spacy download en_core_web_sm
