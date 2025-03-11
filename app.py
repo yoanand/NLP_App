@@ -48,7 +48,10 @@ task_descriptions = {
 }
 
 # Streamlit App
-st.set_page_config(page_title="Advanced NLP App", page_icon="🌟")
+st.set_page_config(page_title="Advanced NLP App",
+                   page_icon="image_2" 
+                #    page_icon="🌟"
+                   )
 
 st.title("Advanced Pre-Transformer NLP App")
 
